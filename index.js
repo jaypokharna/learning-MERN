@@ -1,21 +1,17 @@
-const http = require("http")
+const express = require('express');
+const app = express();
 
-const server = http.createServer((req , res)=>{
-
-    if(req.url === "/about") {
-        res.end("<h1>About</h1>")
-    }
-    if(req.url === "/") {
-        res.end("<h1>Home</h1>")
-    }
-    else{
-        res.end("<h1>404 - Page not found</h1>")
-    }
-
+app.use(function(req,res,next){
+    console.log("Middleware");
+    next();
 });
 
-server.listen(5000,()=>{
-    console.log("Server is working") 
-});
+app.get('/',function(req,res){
+    res.send("Main Page")
+})
 
+app.get('/profile',function(req,res){
+    res.send("Profile Page")
+})
 
+app.listen(3000);
