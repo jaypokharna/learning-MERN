@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --font-fam: "Outfit", sans-serif;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+  }
+  #text {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    transition: 100ms ease;
+  }
+  #text h1 {
+    font-family: var(--font-fam);
+    font-size: 25vmax;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    user-select: none;
+  }
+  
+  #ball {
+    width: 20vmax;
+    height: 20vmax;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    /*   box-shadow: 5px 5px 10px #ffffff20, -5px -5px 50px 10px #ffffff10; */
+    transition: 100ms ease;
+    z-index: -1;
+  }
+  #ball img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
